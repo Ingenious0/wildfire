@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(8,30,41,255);
+  overflow: hidden;
+}
+
+
+.map {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.location-icon {
+  font-size: 2rem;
+  color: red;
+}
+
+.location-icon:hover {
+  cursor: pointer;
+  scale: 2;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  object-fit: contain;
+  flex-direction: column;
+}
+
+.loader-text {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+}
+
+.loader img {
+  width: 400px;
+}
+
+.location-info {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 400px;
+  min-width: 400px;
+  min-height: 200px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 24px;
+  box-shadow: 1px 1px 5px black;
+  color: black;
+}
+
+.location-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.location-info li {
+  padding: 5px 0;
+}
+
+.location-info h2 {
+  font-weight: bolder;
+  font-size: 2em;
+  margin: auto;
+  border-bottom: 1px solid black;
+  text-shadow: 0px 0px 2px black;
+}
+
+.stat {
+  color: green;
+}
+
+.logo-icon {
+  color: green;
+}
+
+.external {
+  display: inline-flex;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  align-items: center;
+  gap: 1em;
+  padding-right: 1em;
+}
+
+.external-icon {
+  font-size: 2rem;
+}
