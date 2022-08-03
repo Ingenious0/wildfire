@@ -1,11 +1,10 @@
 import { Icon } from '@iconify/react';
-import locationIcon from '@iconify/icons-mdi/fire-alert';
 
 
-const LocationMarker = ({ lat, lng, onClick }) => {
+const LocationMarker = ({ onClick, icons }) => {
   return (
     <div className='location-marker' onClick={onClick}>
-        <Icon icon={locationIcon} className="location-icon" />
+        <Icon icon={icons} className="location-icon" />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(8,30,41,255);
+  background-color: rgba(9,25,40,255);
   overflow: hidden;
 }
 
@@ -10,6 +10,13 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
+}
+
+.notification {
+  display: flex;
+  z-index: 20;
+  width: fit-content;
+  height: fit-content;
 }
 
 .location-icon {
@@ -30,13 +37,16 @@ body {
   color: white;
   object-fit: contain;
   flex-direction: column;
+  opacity: 0.7;
 }
 
 .loader-text {
   display: flex;
-  width: 100%;
+  width: 50%;
   text-align: center;
-  font-size: 1em;
+  font-size: 2em;
+  justify-content: center;
+  font-weight: bolder;
 }
 
 .loader img {
@@ -49,13 +59,13 @@ body {
   left: 50px;
   width: 400px;
   min-width: 400px;
-  min-height: 200px;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   border-radius: 24px;
   box-shadow: 1px 1px 5px black;
   color: black;
+  z-index: 50;
 }
 
 .location-info ul {
@@ -91,8 +101,58 @@ body {
   align-items: center;
   gap: 1em;
   padding-right: 1em;
+  text-decoration: none;
 }
 
 .external-icon {
   font-size: 2rem;
+}
+
+.exit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 2rem;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.exit:hover {
+  cursor: pointer;
+}
+
+.selection-box {
+  display: flex;
+  flex-direction: column;
+  width:60px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 60px;
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.set-icon {
+  font-size: 2em;
+  color: black;
+}
+
+.icon-box {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 4px solid black;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-box:hover {
+  cursor: pointer;
+  background-color: green;
 }
