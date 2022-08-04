@@ -58,7 +58,6 @@ body {
   top: 50px;
   left: 50px;
   width: 400px;
-  min-width: 400px;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
@@ -155,4 +154,40 @@ body {
 .icon-box:hover {
   cursor: pointer;
   background-color: green;
+}
+
+@media only screen and (max-device-width: 500px) {
+  .location-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+    gap: .5em;
+  }
+  .exit {
+    display: flex;
+    right: 40px;
+    top: 0px;
+    position: absolute;
+
+  }
+
+  .map {
+    min-width: 100%;
+    overflow: hidden;
+  }
+
+  .external {
+    right: 40px;
+
+  }
+
+  .selection-box {
+    scale: 0.5;
+    bottom: 200px;
+  }
+
 }
