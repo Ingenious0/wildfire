@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const LocationInfoBox = ({ info, setExit }) => {
-
   const [firedays, setFiredays] = useState(null);
 
   useEffect(() => {
@@ -14,13 +13,15 @@ const LocationInfoBox = ({ info, setExit }) => {
       var currentTime = new Date();
       var fireTime = new Date(info.date);
       var days = 24 * 60 * 60 * 1000;
-      let difference = Math.round(Math.abs((currentTime.getTime() - fireTime.getTime()) / (days)));
-      if(difference >= 365){
+      let difference = Math.round(
+        Math.abs((currentTime.getTime() - fireTime.getTime()) / days)
+      );
+      if (difference >= 365) {
         difference = difference - 365;
-        let newDay = `1 year and ${difference} days old`
+        let newDay = `1 year and ${difference} days old`;
         setFiredays(newDay);
-      } else if (difference < 365){
-        if (difference > 30){
+      } else if (difference < 365) {
+        if (difference > 30) {
           difference = Math.round(difference / 30);
           let newDay = `${difference} months old`;
           setFiredays(newDay);
@@ -31,36 +32,43 @@ const LocationInfoBox = ({ info, setExit }) => {
       } else {
         setFiredays(null);
       }
-      
-      
-    }
+    };
     dateCount();
-  }, [info.title])
-
+  }, [info.title]);
 
   return (
     <AnimatePresence>
-      <motion.div 
+      <motion.div
         className="location-info"
         key={setExit}
         initial={{ y: -50, scale: 0, opacity: 1 }}
         animate={{ y: 0, scale: 1, opacity: 1 }}
-        exit={{ y: -50, scale: 0.5, opacity: 1 }} 
+        exit={{ y: -50, scale: 0.5, opacity: 1 }}
       >
-          <h2>Nat<span className="stat">Stat</span><Icon className="logo-icon" icon={logoIcon} /></h2>
+        <h2>
+          TEAM<span className="stat">CAUTION</span>
+          <Icon className="logo-icon" icon={logoIcon} />
+        </h2>
 
-            <Icon onClick={setExit} icon={exitIcon} className="exit" />
-            <ul>
-                <li><strong>{info.title}</strong></li>
-                <li>{firedays}</li>
-            </ul>
-            <a href={info.link} target="_blank" rel="noreferrer" className='external'>
-                <h3>Read More</h3>
-                <Icon className="external-icon" icon={sourceIcon} />
-            </a>
+        <Icon onClick={setExit} icon={exitIcon} className="exit" />
+        <ul>
+          <li>
+            <strong>{info.title}</strong>
+          </li>
+          <li>{firedays}</li>
+        </ul>
+        <a
+          href={info.link}
+          target="_blank"
+          rel="noreferrer"
+          className="external"
+        >
+          <h3>Read More</h3>
+          <Icon className="external-icon" icon={sourceIcon} />
+        </a>
       </motion.div>
     </AnimatePresence>
   );
-}
+};
 
 export default LocationInfoBox;

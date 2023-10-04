@@ -1,10 +1,9 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(9,25,40,255);
+  background-color: rgba(9, 25, 40, 255);
   overflow: hidden;
 }
-
 
 .map {
   width: 100vw;
@@ -66,7 +65,24 @@ body {
   color: black;
   z-index: 50;
 }
+.header {
+  display: flex;
+  padding: 10px;
+  background-color: #652d2d;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
 
+.header h1 {
+  font-size: 25px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
 .location-info ul {
   list-style: none;
   padding: 0;
@@ -123,7 +139,7 @@ body {
 .selection-box {
   display: flex;
   flex-direction: column;
-  width:60px;
+  width: 60px;
   height: 200px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 60px;
@@ -155,7 +171,61 @@ body {
   cursor: pointer;
   background-color: green;
 }
-
+.flood-icon {
+  font-size: 2rem;
+  color: blue;
+}
+.fire-icon {
+  font-size: 2rem;
+  color: red;
+}
+.landslide-icon {
+  font-size: 2rem;
+  color: rgb(51, 46, 46);
+}
+.image {
+  width: 5%;
+}
+.team-icon {
+  font-size: 2rem;
+  color: green;
+}
+.equake-icon {
+  font-size: 2rem;
+  color: #652d2d;
+}
+.login-page {
+  position: absolute;
+  z-index: 100;
+  width: 30vw;
+  height: 95vh;
+  margin-top: 2%;
+  margin-left: 70vw;
+  background-color: #f8f8f8;
+  border: solid 1px #ddd;
+  z-index: 100;
+}
+.chat-title {
+  position: absolute;
+  font-size: 20px;
+  margin-top: 20%;
+  background-color: #dadada;
+  left: 25%;
+  right: 20%;
+}
+.side {
+  margin-top: 0.75%;
+  margin-left: 20%;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  font-size: large;
+  margin: 20px;
+}
+.username {
+  background-color: #fff;
+}
 @media only screen and (max-device-width: 500px) {
   .location-info {
     display: flex;
@@ -165,14 +235,13 @@ body {
     left: 0;
     top: 0;
     border-radius: 0;
-    gap: .5em;
+    gap: 0.5em;
   }
   .exit {
     display: flex;
     right: 40px;
     top: 0px;
     position: absolute;
-
   }
 
   .map {
@@ -182,11 +251,9 @@ body {
 
   .external {
     right: 40px;
-
   }
 
   .selection-box {
     bottom: 200px;
   }
-
 }
